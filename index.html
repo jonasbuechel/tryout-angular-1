@@ -8,6 +8,21 @@
     
     <hello-world></hello-world>
     
+    <h1>My TODOs</h1>
+    <div class="list" ng-controller="mainCtrl">
+        <input type="checkbox" />
+        <label class="editing-label"></label>
+        <input type="text" class="editing-label" />
+        
+        <div class="actions">
+            <p>Press the save-button ;-)</p>
+            <button class="edit">edit</a>
+            <button ng-click="helloWorld()" class="save">save</a>
+            <button class="dseletes">delete</a>
+        </div>
+
+    </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js" type="text/javascript"></script>
     <script src="scripts/app.js" type="text/javascript"></script>
     <script src="scripts/hello-world.js" type="text/javascript"></script>
