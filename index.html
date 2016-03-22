@@ -23,6 +23,20 @@
 
     </div>
     
+    <div class="controller-test" ng-controller="parentCtrl">
+        <h2>Controller Test</h2>
+        <div ng-controller="child1Ctrl" style="border:1px solid grey; margin-bottom:1em; padding:1em;">
+            <h3>child 1</h3>
+            <button ng-click="helloWorld()">HelloWorld</button>
+            <button ng-click="whoAmI()">WhoAmI</button>
+        </div>
+        <div ng-controller="child2Ctrl" style="border:1px solid grey; margin-bottom:1em; padding:1em;">
+            <h3>child 2</h3>
+            <button ng-click="helloWorld()">HelloWorld</button>
+            <button ng-click="whoAmI()">WhoAmI</button>
+        </div>
+    </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js" type="text/javascript"></script>
     <script src="scripts/app.js" type="text/javascript"></script>
     <script src="scripts/hello-world.js" type="text/javascript"></script>
