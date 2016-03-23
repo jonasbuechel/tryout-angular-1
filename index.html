@@ -13,7 +13,7 @@
     
     <h2>My TODOs</h2>
     <div class="list" ng-controller="todoCtrl">
-        <input ng-model="task.completed" type="checkbox" />
+        <input ng-model="task.state" type="checkbox" />
         <label class="editing-label"></label>
         <input ng-model="task.name" type="text" class="editing-label" />
         <h4>Your Input (live): {{task.name}}</h4>

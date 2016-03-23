@@ -9,7 +9,8 @@ angularPlaygroundApp.controller('todoCtrl', function($scope) {
     $scope.saveTask = function() {
         $scope.todolist.push(
             {
-                name: $scope.task.name
+                name: $scope.task.name,
+                completed: $scope.task.state || false
             }
         );
     };
@@ -17,8 +18,9 @@ angularPlaygroundApp.controller('todoCtrl', function($scope) {
 
 /* add directive */
 angularPlaygroundApp.directive('todoList', function() {
+    
     return {
-        template: 'saved values: {{todolist.list}}',
+        template: 'saved values: {{todolist}}',
         restrict: 'E' //just allow integration as html element
     };
 });
