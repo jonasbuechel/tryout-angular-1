@@ -6,14 +6,17 @@
 </head>
 <body ng-app="todoListApp">
     
+    <h1>My Angular playground</h1>
+    <h2>Directive</h2>
     <hello-world></hello-world>
+    <hr />
     
-    <h1>My TODOs</h1>
-    <div class="list" ng-controller="mainCtrl">
-        <input type="checkbox" />
+    <h2>My TODOs</h2>
+    <div class="list" ng-controller="todoCtrl">
+        <input ng-model="task.completed" type="checkbox" />
         <label class="editing-label"></label>
-        <input type="text" class="editing-label" />
-        
+        <input ng-model="task.name" type="text" class="editing-label" />
+        <h4>Your Input (live): {{task.name}}</h4>
         <div class="actions">
             <p>Press the save-button ;-)</p>
             <button class="edit">edit</a>
@@ -22,9 +25,17 @@
         </div>
 
     </div>
-    
+    <hr />
     <div class="controller-test" ng-controller="parentCtrl">
+        <h2>Model scope test</h2>
+        <p>The Data from todoCtrl shouldn't be shown in my parentCtrl</p>
+        <h4>Your Input (live): {{task.name}}</h4>
+        
+        <hr />
+        
         <h2>Controller Test</h2>
+        <h3>Prototypal inheritance (see console outputs)</h3>
+        
         <div ng-controller="child1Ctrl" style="border:1px solid grey; margin-bottom:1em; padding:1em;">
             <h3>child 1</h3>
             <button ng-click="helloWorld()">HelloWorld</button>

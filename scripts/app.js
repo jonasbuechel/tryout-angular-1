@@ -5,7 +5,7 @@
 var todoListApp = angular.module('todoListApp', []);
 
 /* add a controller */
-todoListApp.controller('mainCtrl', function($scope) {
+todoListApp.controller('todoCtrl', function($scope) {
     /* FUNCTION: Hello World */
     $scope.helloWorld = function() {
         console.log('Hello  world, I\'m the main controller');
