@@ -5,18 +5,6 @@
 var angularPlaygroundApp = angular.module('angularPlaygroundApp', []);
 
 /* add a controller */
-angularPlaygroundApp.controller('todoCtrl', function($scope) {
-    /* FUNCTION: Hello World */
-    $scope.helloWorld = function() {
-        console.log('Hello  world, I\'m the main controller');
-    };
-    /* FUNCTION: whoAmI */
-    $scope.whoAmI = function() {
-        console.log('WhoAmI: I\'m the main controller');
-    };
-});
-
-/* add a controller */
 angularPlaygroundApp.controller('parentCtrl', function($scope) {
     /* FUNCTION: Hello World */
     $scope.helloWorld = function() {
