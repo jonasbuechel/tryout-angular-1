@@ -2,10 +2,10 @@
 /*global angular */
 
 /* create angular module */
-var todoListApp = angular.module('todoListApp', []);
+var angularPlaygroundApp = angular.module('angularPlaygroundApp', []);
 
 /* add a controller */
-todoListApp.controller('todoCtrl', function($scope) {
+angularPlaygroundApp.controller('todoCtrl', function($scope) {
     /* FUNCTION: Hello World */
     $scope.helloWorld = function() {
         console.log('Hello  world, I\'m the main controller');
@@ -17,7 +17,7 @@ todoListApp.controller('todoCtrl', function($scope) {
 });
 
 /* add a controller */
-todoListApp.controller('parentCtrl', function($scope) {
+angularPlaygroundApp.controller('parentCtrl', function($scope) {
     /* FUNCTION: Hello World */
     $scope.helloWorld = function() {
         console.log('Parent: this child has no own helloWorld function, so I allow you to use mine');
@@ -29,7 +29,7 @@ todoListApp.controller('parentCtrl', function($scope) {
 });
 
 /* add a first children controller */
-todoListApp.controller('child1Ctrl', function($scope) {
+angularPlaygroundApp.controller('child1Ctrl', function($scope) {
     /* FUNCTION: Hello World */
     $scope.helloWorld = function() {
         console.log('Hello  world, I\'m the child1 controller');
@@ -37,7 +37,7 @@ todoListApp.controller('child1Ctrl', function($scope) {
 });
 
 /* add a second children controller */
-todoListApp.controller('child2Ctrl', function($scope) {
+angularPlaygroundApp.controller('child2Ctrl', function($scope) {
     /* FUNCTION: Hello World */
     $scope.whoAmI = function() {
         console.log('WhoAmI: I\'m the child2 controller');
