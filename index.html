@@ -18,19 +18,21 @@
         <button ng-click="saveTask()" class="save">save</button>
         <h4>Your Input (live): {{newTask.name}}</h4>
         
-        <todo-list></todo-list>
-        <br />
-        
-        <div ng-repeat="task in todolist">
-            <input ng-model="task.completed" type="checkbox" />
-            <label ng-click="task.editing = true" ng-hide="task.editing" class="editing-label">{{task.name}}</label>
-            <input ng-show="task.editing" ng-model="task.name" type="text" class="editing-label" />
-            <button ng-click="task.editing = !task.editing" class="edit">edit <span ng-show="task.editing">finish</span></a>
-            <button ng-show="task.editing" class="delete">delete</a>
+        <div>
+            <h3>TodoList: raw data</h3>
+            <todo-list></todo-list>
         </div>
         
-        
-
+        <div>
+            <h3>TodoList: repeated html and functions per task</h3>
+            <div ng-repeat="task in todolist">
+                <input ng-model="task.completed" type="checkbox" />
+                <label ng-click="task.editing = true" ng-hide="task.editing" class="editing-label">{{task.name}}</label>
+                <input ng-show="task.editing" ng-model="task.name" type="text" class="editing-label" />
+                <button ng-click="task.editing = !task.editing" class="edit">edit <span ng-show="task.editing">finish</span></a>
+                <button ng-show="task.editing" class="delete">delete</a>
+            </div>
+        </div>
     </div>
     <hr />
     <div class="controller-test" ng-controller="parentCtrl">
