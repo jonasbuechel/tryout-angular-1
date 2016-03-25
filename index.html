@@ -28,7 +28,12 @@
             <div ng-repeat="task in todolist">
                 <input ng-model="task.completed" type="checkbox" />
                 <label ng-click="task.editing = true" ng-hide="task.editing" class="editing-label">{{task.name}}</label>
-                <input ng-show="task.editing" ng-model="task.name" type="text" class="editing-label" />
+                <input
+                        ng-model="task.name"
+                        ng-show="task.editing"
+                        ng-blur="task.editing = false"
+                        type="text" class="editing-label"
+                />
                 <button ng-click="task.editing = !task.editing" class="edit">edit <span ng-show="task.editing">finish</span></a>
                 <button ng-show="task.editing" class="delete">delete</a>
             </div>
