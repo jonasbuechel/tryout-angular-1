@@ -5,12 +5,13 @@
 angularPlaygroundApp.controller('todoCtrl', function($scope) {
 
     $scope.todolist = [];
+    $scope.newTask = {};
 
     $scope.saveTask = function() {
         $scope.todolist.push(
             {
-                name: $scope.task.name,
-                completed: $scope.task.state || false
+                name: $scope.newTask.name || null,
+                completed: $scope.newTask.state || false
             }
         );
     };

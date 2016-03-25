@@ -13,10 +13,10 @@
     
     <h2>My TODOs</h2>
     <div class="list" ng-controller="todoCtrl">
-        <input ng-model="task.state" type="checkbox" />
+        <input ng-model="newTask.state" type="checkbox" />
         <label class="editing-label"></label>
-        <input ng-model="task.name" type="text" class="editing-label" />
-        <h4>Your Input (live): {{task.name}}</h4>
+        <input ng-model="newTask.name" type="text" class="editing-label" />
+        <h4>Your Input (live): {{newTaskname}}</h4>
         
         <todo-list></todo-list>
         
@@ -31,7 +31,7 @@
     <div class="controller-test" ng-controller="parentCtrl">
         <h2>Model scope test</h2>
         <p>The Data from todoCtrl shouldn't be shown in my parentCtrl</p>
-        <h4>Your Input (live): {{task.name}}</h4>
+        <h4>Your Input (live): {{newTaskname}}</h4>
         
         <hr />
         
