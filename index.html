@@ -11,20 +11,25 @@
     <hello-world></hello-world>
     <hr />
     
-    <h2>My TODOs</h2>
+    <h2>My TodoList</h2>
     <div class="list" ng-controller="todoCtrl">
-        <input ng-model="newTask.state" type="checkbox" />
-        <label class="editing-label"></label>
+        <h3>New Entry</h3>
         <input ng-model="newTask.name" type="text" class="editing-label" />
-        <h4>Your Input (live): {{newTaskname}}</h4>
+        <button ng-click="saveTask()" class="save">save</button>
+        <h4>Your Input (live): {{newTask.name}}</h4>
         
         <todo-list></todo-list>
+        <br />
         
-        <div class="actions">
-            <button class="edit">edit</a>
-            <button ng-click="saveTask()" class="save">save</a>
-            <button class="delete">delete</a>
+        <div ng-repeat="task in todolist">
+            <input ng-model="task.completed" type="checkbox" />
+            <label ng-click="task.editing = true" ng-hide="task.editing" class="editing-label">{{task.name}}</label>
+            <input ng-show="task.editing" ng-model="task.name" type="text" class="editing-label" />
+            <button ng-click="task.editing = !task.editing" class="edit">edit <span ng-show="task.editing">finish</span></a>
+            <button ng-show="task.editing" class="delete">delete</a>
         </div>
+        
+        
 
     </div>
     <hr />
