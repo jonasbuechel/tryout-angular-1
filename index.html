@@ -30,7 +30,11 @@
                     class="task"
                     ng-class="{'edited': task.edited}"
                 >
-                    <input ng-model="task.completed" type="checkbox" />
+                    <input
+                           ng-model="task.completed"
+                           type="checkbox"
+                           ng-change="task.edited = true"
+                    />
                     <label 
                            ng-click="task.editing = true" 
                            ng-hide="task.editing" 
