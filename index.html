@@ -26,7 +26,10 @@
         <div>
             <h3>TodoList: repeated html and functions per task</h3>
             <ul ng-repeat="task in todolist">
-                <li class="task">
+                <li 
+                    class="task"
+                    ng-class="{'edited': task.edited}"
+                >
                     <input ng-model="task.completed" type="checkbox" />
                     <label 
                            ng-click="task.editing = true" 
@@ -39,6 +42,7 @@
                     <input
                             ng-model="task.name"
                             ng-show="task.editing"
+                            ng-change="task.edited = true"
                             ng-blur="task.editing = false"
                             type="text" class="editing-label"
                     />

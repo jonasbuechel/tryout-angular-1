@@ -20,3 +20,11 @@ ul, li{
 .task > .completed{
     text-decoration: line-through;
 }
+
+.task.edited:after{
+    padding-left: 1em;
+    content: "(edited)";
+    color: #CCCCCC;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
