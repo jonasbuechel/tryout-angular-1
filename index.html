@@ -13,6 +13,8 @@
     
     <h2>My TodoList</h2>
     <div class="list" ng-controller="todoCtrl">
+        <h3>Testservice</h3>
+        <button ng-click="helloConsole()">Test my Service</button>
         <h3>New Entry</h3>
         <input ng-model="newTask.name" type="text" class="editing-label" />
         <button ng-click="saveTask()" class="save">save</button>

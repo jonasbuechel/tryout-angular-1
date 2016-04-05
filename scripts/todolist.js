@@ -2,7 +2,7 @@
 /*global angularPlaygroundApp */
 
 /* add a controller */
-angularPlaygroundApp.controller('todoCtrl', function($scope) {
+angularPlaygroundApp.controller('todoCtrl', function($scope, dataService) {
 
     $scope.todolist = [];
     $scope.newTask = {};
@@ -23,6 +23,10 @@ angularPlaygroundApp.controller('todoCtrl', function($scope) {
             $scope.newTask.name = null;
         }
     };
+
+    //Access service
+    $scope.helloConsole = dataService.helloConsole;
+
 });
 
 /* add directive */
@@ -31,5 +35,12 @@ angularPlaygroundApp.directive('todoList', function() {
     return {
         template: 'saved values: {{todolist}}',
         restrict: 'E' //just allow integration as html element
+    };
+});
+
+/* Service to get Mockdata */
+angularPlaygroundApp.service('dataService', function() {
+    this.helloConsole = function() {
+        console.log('This is the hello console service!');
     };
 });
