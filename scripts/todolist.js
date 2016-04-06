@@ -4,12 +4,13 @@
 /* add a controller */
 angularPlaygroundApp.controller('todoCtrl', function($scope, dataService) {
 
-    $scope.todolist = [];
-    $scope.newTask = {};
+    //Add data from service
+    dataService.getTodos(function(response) {
+        $scope.todolist = response.data;
+    });
 
-    //Add some testData
-    $scope.todolist.push({name: 'finish angular course'});
-    $scope.todolist.push({name: 'by milk', completed: true});
+    //Declare newTask
+    $scope.newTask = {};
 
     $scope.saveTask = function() {
 
@@ -39,8 +40,13 @@ angularPlaygroundApp.directive('todoList', function() {
 });
 
 /* Service to get Mockdata */
-angularPlaygroundApp.service('dataService', function() {
+angularPlaygroundApp.service('dataService', function($http) {
     this.helloConsole = function() {
         console.log('This is the hello console service!');
     };
+
+    this.getTodos = function(callback) {
+        $http.get('mock/mockdata.json').then(callback);
+    };
+
 });
