@@ -28,6 +28,16 @@ angularPlaygroundApp.controller('todoCtrl', function($scope, dataService) {
     //Access service
     $scope.helloConsole = dataService.helloConsole;
 
+    //add service deleteTodo to controller
+    $scope.deleteTask = function(task) {
+        dataService.deleteTask(task);
+    };
+
+    //add service deleteTodo to controller
+    $scope.saveTask = function(task) {
+        dataService.saveTask(task);
+    };
+
 });
 
 /* add directive */
@@ -49,4 +59,12 @@ angularPlaygroundApp.service('dataService', function($http) {
         $http.get('mock/mockdata.json').then(callback);
     };
 
+    this.deleteTask = function(task) {
+        console.log('delete todo: ' + task.name);
+    };
+
+    this.saveTask = function(task) {
+        console.log('save todo: ' + task.name);
+    };
 });
+

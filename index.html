@@ -53,7 +53,13 @@
                             type="text" class="editing-label"
                     />
                     <button ng-click="task.editing = !task.editing" class="edit">edit <span ng-show="task.editing">finish</span></button>
-                    <button ng-show="task.editing" class="delete">delete</button>
+                    <button 
+                        ng-show="task.editing"
+                        ng-click="deleteTask(task)"
+                        class="delete"
+                    >
+                        delete
+                    </button>
                 </li>
             </ul>
         </div>
