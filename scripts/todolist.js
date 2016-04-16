@@ -12,8 +12,24 @@ angularPlaygroundApp.controller('todoCtrl', function($scope, dataService) {
     //Declare newTask
     $scope.newTask = {};
 
-    $scope.saveTask = function() {
+    //Access service
+    $scope.helloConsole = dataService.helloConsole;
 
+    //add service deleteTodo to controller
+    $scope.deleteTask = function(task, index) {
+        //call service
+        dataService.deleteTask(task);
+
+        //update ui
+        $scope.todolist.splice(index, 1);
+    };
+
+    //add service deleteTodo to controller
+    $scope.addNewTask = function(newTask) {
+        //call service
+        dataService.addNewTask(newTask);
+
+        //update ui
         if ($scope.newTask.name) {
             $scope.todolist.push(
                 {
@@ -23,19 +39,6 @@ angularPlaygroundApp.controller('todoCtrl', function($scope, dataService) {
             );
             $scope.newTask.name = null;
         }
-    };
-
-    //Access service
-    $scope.helloConsole = dataService.helloConsole;
-
-    //add service deleteTodo to controller
-    $scope.deleteTask = function(task) {
-        dataService.deleteTask(task);
-    };
-
-    //add service deleteTodo to controller
-    $scope.saveTask = function(task) {
-        dataService.saveTask(task);
     };
 
 });
@@ -56,15 +59,16 @@ angularPlaygroundApp.service('dataService', function($http) {
     };
 
     this.getTodos = function(callback) {
+        console.log('dataService: getTodos');
         $http.get('mock/mockdata.json').then(callback);
     };
 
     this.deleteTask = function(task) {
-        console.log('delete todo: ' + task.name);
+        console.log('dataService: delete todo: ' + task.name);
     };
 
-    this.saveTask = function(task) {
-        console.log('save todo: ' + task.name);
+    this.addNewTask = function(task) {
+        console.log('dataService: save todo: ' + task.name);
     };
 });
 
